@@ -4,9 +4,25 @@ from .models import Listing, Booking
 class ListingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Listing
-        fields = '__all__'
+        fields = [
+            'id',
+            'title',
+            'description',
+            'price',
+            'location',
+            'created_at',
+            'updated_at',
+        ]
 
 class BookingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Booking
-        fields = '__all__'
+        fields = [
+            'id',
+            'listing',
+            'user',
+            'start_date',
+            'end_date',
+            'status',
+            'created_at',
+        ]
